@@ -1,0 +1,22 @@
+﻿<Window x:Class="NP_hw_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NP_hw_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top"> Ваше имя:</TextBlock>
+        <TextBox DockPanel.Dock="Top" Text="{Binding UserName}"/>
+
+        <TextBlock DockPanel.Dock="Top" >Файл:</TextBlock>
+
+        <DockPanel DockPanel.Dock="Top">
+            <Button DockPanel.Dock="Right" Margin="5" Click="Button_Click_Send">Отправить</Button>
+            <Button DockPanel.Dock="Right" Margin="5" Click="Button_Click">Выбрать файл</Button>
+            <TextBox x:Name="filePath" DockPanel.Dock="Top" IsReadOnly="True" Text="{Binding FileName}"/>
+        </DockPanel>
+        <ListBox x:Name="listBox" ItemsSource="{Binding Chat}"/>
+    </DockPanel>
+</Window>
